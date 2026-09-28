@@ -105,7 +105,7 @@ function mul = MUL_Fixed_LUT_ALM_1(e, A, B, n_h, n_l, v_h, v_l, app_k)
     exp_tmp = floor(exp_tmp.*(2.^f_o)) ./ (2.^f_o);
 
 
-    mul = exp_tmp.*2.^(mul_int);
+    mul = floor(exp_tmp.*2.^(mul_int));
 
     d_0 = mul - floor(mul ./ 2) .* 2;
     d_1 = floor(mul ./ 2) - floor(mul ./ 4) .* 2;
